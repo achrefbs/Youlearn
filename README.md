@@ -1,1 +1,2 @@
 # Youlearn
+export "PYTHONDONTWRITEBYTECODE"="1"
