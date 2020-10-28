@@ -12,11 +12,15 @@ def signup_post():
     password = request.form.get('password')
     lastname = request.form.get('lastname')
     telephone = request.form.get('telephone')
+    if request.form.get('isteacher'):
+        isteacher = True
+    else:
+        isteacher = False
     if email is None or password is None:
             abort(400) # missing arguments
     if User.query.filter_by(email = email).first() is not None:
             abort(400) # existing user
-    user = User(email = email, name = name, lastname = lastname, telephone = telephone)
+    user = User(email = email, name = name, lastname = lastname, telephone = telephone, isteacher=isteacher)
     user.hash_password(password)
     db.session.add(user)
     db.session.commit()

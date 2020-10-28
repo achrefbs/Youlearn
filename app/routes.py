@@ -16,5 +16,7 @@ def settings():
 
 
 @app.route('/profile')
+@login_required
 def profile():
-	return render_template('profile.html', title='Profile')
+	profile = {'email':current_user.email,'name':current_user.name, 'lastname':current_user.lastname, 'telephone': current_user.telephone}
+	return render_template('profile.html', title='Profile', profile=profile)
