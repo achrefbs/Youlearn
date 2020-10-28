@@ -10,7 +10,6 @@ class SignupForm(FlaskForm):
     lastname = StringField('LastName')
     telephone = IntegerField('Telephone Number')
     profession = StringField('Profession')
-    isteacher = BooleanField('Teacher')
     submit = SubmitField('Sign Up')
 
 

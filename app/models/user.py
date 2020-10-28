@@ -11,7 +11,6 @@ class User(UserMixin,db.Model):
     name = db.Column(db.String(100))
     lastname = db.Column(db.String(100))
     telephone = db.Column(db.Integer)
-    isteacher = db.Column(db.Boolean)
     def hash_password(self, password):
 
         self.password_hash = pwd_context.encrypt(password)
