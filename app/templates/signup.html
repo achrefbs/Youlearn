@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{{ title }}</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="static/images/logo2.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+        <link href="static/css/loginstyle.css" rel="stylesheet"/>
+    </head>
+
+
+<body id="page-top">
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Sign Up</h3>
+              <form method="POST">
+                <div class="form-label-group">
+                  {{ form.email(class="form-control", placeholder="Email address", id="inputEmail", type="email") }}
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  {{ form.password(class="form-control", placeholder="Password", type="password",id="inputPassword") }}
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <div class="form-label-group">
+                  {{ form.name(class="form-control", placeholder="Name") }}
+                  <label>Name</label>
+                </div>
+
+                <div class="form-label-group">
+                  {{ form.lastname(class="form-control", placeholder="LastName") }}
+                  <label>LastName</label>
+                </div>
+
+                <div class="form-label-group">
+                  {{ form.telephone(class="form-control", placeholder="Telephone") }}
+                  <label>Telephone</label>
+                </div>
+
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                {{form.submit(class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2")}}
+                <div class="text-center">
+                  <a class="small" href="#">Forgot password?</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="static/assets/mail/jqBootstrapValidation.js"></script>
+        <script src="static/assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+</body>
+</html>
