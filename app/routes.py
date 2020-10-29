@@ -90,10 +90,9 @@ def displayCategory(categoryId):
 	return render_template('displayCategory.html', data=data, categoryName=categoryName)
 
 
-
 @app.route("/categories")
 def categories():
 	categories = db.session.query(Category).all()
-	for category in categories:
-		print(category.category_name)
-	return render_template('categories.html', categories=categories)
+	count = db.session.query(Category).count()
+	print(count)
+	return render_template('categories.html', categories=categories, count=count)

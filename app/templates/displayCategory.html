@@ -1,36 +1,29 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Category: {{categoryName}}</title>
-</head>
-<body>
-<div id="title">
-	<form>
-		<input id="searchBox" type="text" name="searchQuery">
-		<input id="searchButton" type="submit" value="Search">
-	</form>
-</div>
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
 
-<div>
-	<h2>Showing all products of Category {{categoryName}}:</h2>
-	{% for itemData in data %}
-	<table>
-		<tr id="productName">
-			{% for row in itemData %}
-			<td>
-				{{row.course_name}}
-			</td>
-			{% endfor %}
-		</tr>
-		<tr id="productPrice">
-			{% for row in itemData %}
-			<td>
-				$ {{row.regular_price}}
-			</td>
-			{% endfor %}
-		</tr>
-	</table>
+
+    <div class="card mb-4">
+      <div class="card-header with-elements">
+        <span class="card-header-title">Courses from {{categoryName}} :&nbsp;
+        {% for itemData in data %}
+          <small class="text-muted">{{count}}</small>
+        </span>
+      </div>
+      <div class="row no-gutters row-bordered row-border-light">
+      	{% for row in itemData %}
+        <a href="" class="d-flex col-4 col-sm-3 col-md-4 flex-column align-items-center text-body py-3 px-2">
+          <img src="static/images/" alt="image" class="d-block ui-w-40 rounded-circle mb-2" height="100">
+          <div class="text-center"> {{row.course_name}}</div>
+          <div class="text-center"> {{row.regular_price}} $</div>
+          
+        </a>
+        {% endfor %}
+      </div>
+    </div>
 	{% endfor %}
-</div>
-</body>
-</html>
+
+{% endblock %}
