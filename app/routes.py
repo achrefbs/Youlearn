@@ -45,7 +45,8 @@ def addCourse():
 	form = addCourseForm()
 	form.category.choices = [(row.categoryid, row.category_name) for row in Category.query.all()]
 	if form.validate_on_submit():
-		course = Course(course_name=form.CourseName.data, description=form.CourseDescription.data, discounted_price=15, regular_price=form.CoursePrice.data)
+		image = images.save(form.image.data)
+		course = Course(course_name=form.CourseName.data, description=form.CourseDescription.data, discounted_price=15, regular_price=form.CoursePrice.data, image=image)
 		db.session.add(course)
 		db.session.commit()
 		course_category = CourseCategory(categoryid=form.category.data, courseid=course.courseid)
@@ -76,7 +77,7 @@ def massageItemData(data):
 @app.route("/displayCategory/<int:categoryId>")
 def displayCategory(categoryId):
 	courseDetailsByCategoryId = Course.query.join(CourseCategory, Course.courseid == CourseCategory.courseid) \
-		.add_columns(Course.courseid, Course.course_name, Course.regular_price, Course.discounted_price
+		.add_columns(Course.courseid, Course.course_name, Course.regular_price, Course.discounted_price, Course.image
 					 ) \
 		.join(Category, Category.categoryid == CourseCategory.categoryid) \
 		.filter(Category.categoryid == int(categoryId)) \

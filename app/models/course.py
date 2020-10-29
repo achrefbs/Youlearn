@@ -18,6 +18,7 @@ class Course(db.Model):
     __table_args__ = {'extend_existing': True}
     courseid = db.Column(db.Integer, primary_key=True)
     course_name = db.Column(db.String(100), nullable=False)
+    image = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(100), nullable=False)
     regular_price = db.Column(db.DECIMAL)
     discounted_price = db.Column(db.DECIMAL)

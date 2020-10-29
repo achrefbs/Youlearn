@@ -34,4 +34,5 @@ class addCourseForm(FlaskForm):
     CourseName = StringField('Course Name:', validators=[DataRequired()])
     CourseDescription = TextAreaField('Course Description:', validators=[DataRequired()])
     CoursePrice = FloatField('Course Price:', validators=[DataRequired()])
+    image = FileField('image')
     submit = SubmitField('Save')

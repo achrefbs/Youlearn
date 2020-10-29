@@ -4,23 +4,20 @@
 <br>
 <br>
 <br>
-                <div class="card mb-4">
-                  <div class="card-header with-elements">
-                    <span class="card-header-title">Categories &nbsp;
-                      <small class="text-muted">{{count}}</small>
-                    </span>
-                  </div>
-                  <div class="row no-gutters row-bordered row-border-light">
-                  	{% for category in categories %}
-                    <a href="displayCategory/{{ category.categoryid }}" class="d-flex col-4 col-sm-3 col-md-4 flex-column align-items-center text-body py-3 px-2">
-                      <img src="static/images/{{category.image}}" alt="image" class="d-block ui-w-40 rounded-circle mb-2" height="100">
-                      <div class="text-center">{{ category.category_name }}</div>
-                    </a>
-						{% endfor %}
-                  </div>
-                </div>
-
-
-
+<div class="card mb-4">
+<div class="card-header with-elements">
+<span class="card-header-title">Categories &nbsp;
+<small class="text-muted">{{count}}</small>
+</span>
+</div>
+<div class="row no-gutters row-bordered row-border-light">
+{% for category in categories %}
+<a href="displayCategory/{{ category.categoryid }}" class="d-flex col-4 col-sm-3 col-md-4 flex-column align-items-center text-body py-3 px-2">
+<img src="static/images/{{category.image}}" alt="image" class="d-block ui-w-40 rounded-circle mb-2" height="100">
+<div class="text-center">{{ category.category_name }}</div>
+</a>
+{% endfor %}
+</div>
+</div>
 
 {% endblock %}
