@@ -1,0 +1,29 @@
+<div class="container">
+        <div id="display">
+            <div id="productName">
+                <h1>{{course.course_name}}</h1>
+            </div>
+            <div>
+            </div>
+
+            <div id="productDescription">
+                <h2>Details</h2>
+                <table id="descriptionTable">
+                    <tr>
+                        <td>Name</td>
+                        <td>{{course.course_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Regular Price</td>
+                        <td>$ {{course.regular_price}}</td>
+                    </tr>
+                    <tr>
+                        <td>Discounted Price</td>
+                        <td>$ {{course.discounted_price}}</td>
+                    </tr>
+                </table>
+                <h2>Description</h2>
+                <p>{{course.description}}</p>
+            </div>
+        </div>
+</div>

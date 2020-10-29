@@ -1,0 +1,69 @@
+
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {% if product_icon %}
+                        <img src="{{ product_icon }}" alt="">
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.category.label }}
+                    {% if form.category.errors %}
+                        {{ form.category(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.category.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.category}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.CourseName.label }}
+                    {% if form.CourseName.errors %}
+                        {{ form.CourseName(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.CourseName.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.CourseName}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.CourseDescription.label }}
+                    {% if form.CourseDescription.errors %}
+                        {{ form.CourseDescription(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.CourseDescription.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.CourseDescription}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.CoursePrice.label }}
+                    {% if form.CoursePrice.errors %}
+                        {{ form.CoursePrice(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.CoursePrice.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.CoursePrice}}
+                    {% endif %}
+                </div>
+               
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+
+        </form>
+    </div>
