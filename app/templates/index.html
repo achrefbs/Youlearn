@@ -1,4 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
-
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="static/assets/img/avataaars.svg" alt="" />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">YouLearn</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Achieve your goals with ULearn.</p>
+            </div>
+        </header>
+<br>
+<div class="layout-content">
+<div class="container flex-grow-1 container-p-y">
+<div class="card mb-4">
+<div class="card-header with-elements">
+<span class="card-header-title">Our Courses &nbsp;
+<small class="text-muted">{{count}}</small>
+</span>
+</div>
+<div class="row no-gutters row-bordered row-border-light">
+{% for course in courses %}
+<a href="/course/{{ course.courseid }}" class="d-flex col-4 col-sm-3 col-md-4 flex-column align-items-center text-body py-3 px-2">
+<img src="static/images/{{course.image}}" alt="image" class="d-block ui-w-40 mb-2" height="150">
+<div class="text-center">{{ course.course_name }}</div>
+</a>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
 {% endblock %}

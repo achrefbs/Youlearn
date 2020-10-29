@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="layout-content">
+	<div class="container flex-grow-1 container-p-y">
+<div class="card mb-4">
+<div class="card-header with-elements">
+<span class="card-header-title">All Courses &nbsp;
+<small class="text-muted">{{count}}</small>
+</span>
+</div>
+<div class="row no-gutters row-bordered row-border-light">
+{% for course in courses %}
+<a href="/course/{{ course.courseid }}" class="d-flex col-4 col-sm-3 col-md-4 flex-column align-items-center text-body py-3 px-2">
+<img src="static/images/{{course.image}}" alt="image" class="d-block ui-w-40 mb-2" height="150">
+<div class="text-center">{{ course.course_name }}</div>
+</a>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

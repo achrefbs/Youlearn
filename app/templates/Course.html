@@ -1,29 +1,38 @@
-<div class="container">
-        <div id="display">
-            <div id="productName">
-                <h1>{{course.course_name}}</h1>
-            </div>
-            <div>
-            </div>
-
-            <div id="productDescription">
-                <h2>Details</h2>
-                <table id="descriptionTable">
-                    <tr>
-                        <td>Name</td>
-                        <td>{{course.course_name}}</td>
-                    </tr>
-                    <tr>
-                        <td>Regular Price</td>
-                        <td>$ {{course.regular_price}}</td>
-                    </tr>
-                    <tr>
-                        <td>Discounted Price</td>
-                        <td>$ {{course.discounted_price}}</td>
-                    </tr>
-                </table>
-                <h2>Description</h2>
-                <p>{{course.description}}</p>
-            </div>
-        </div>
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="layout-content">
+    <div class="container flex-grow-1 container-p-y">
+<div class="card mb-4">
+<div class="card-header with-elements">
+<span class="card-header-title">{{course.course_name}} &nbsp;
+</span>
 </div>
+<div class="row no-gutters row-bordered row-border-light">
+    <img src="/static/images/{{course.image}}" alt="image" class="d-block ui-w-40 mb-2" width="500" style="margin: 20px">
+
+<div >
+<h2>Details</h2>
+<table id="descriptionTable">
+    <tr>
+        <td>Name :</td>
+        <td>{{course.course_name}}</td>
+    </tr>
+    <tr>
+        <td>Price : </td>
+        <td>${{course.regular_price}}</td>
+    </tr>
+</table>
+<h2>Description</h2>
+<p>{{course.description}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
