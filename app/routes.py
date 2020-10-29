@@ -90,7 +90,11 @@ def displayCategory(categoryId):
 	except :
 		categoryName = ""
 	data = massageItemData(courseDetailsByCategoryId)
-	return render_template('displayCategory.html', data=data, categoryName=categoryName)
+	if len(data) == 0:
+		count = 0
+	else :
+		count = 1
+	return render_template('displayCategory.html', data=data, categoryName=categoryName, count=count)
 
 
 @app.route("/categories")
